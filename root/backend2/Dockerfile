@@ -24,6 +24,11 @@ RUN apt-get update && apt-get install -y \
 RUN  npx puppeteer browsers install chrome
 
 WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
 COPY . /app
 
 CMD ["node", "index.js"]
