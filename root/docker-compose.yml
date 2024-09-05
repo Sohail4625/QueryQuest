@@ -1,0 +1,88 @@
+version: '3.8'
+
+services:
+  backend1:
+    build:
+      context: ./backend1
+      dockerfile: "Dockerfile"
+    container_name: "backend1"
+    ports:
+      - "5000:5000"
+    depends_on:
+      - "redis"
+      - "elasticsearch"
+    networks:
+      - my-network
+    restart: on-failure
+
+  backend2:
+    build:
+      context: ./backend2
+      dockerfile: "Dockerfile"
+    container_name: "backend2"
+    ports:
+      - "5001:5000"
+    depends_on:
+      - "redis"
+      - "elasticsearch"
+      - "backend1"
+    networks:
+      - my-network
+    restart: on-failure
+
+  backend3:
+    build:
+      context: ./backend2
+      dockerfile: "Dockerfile"
+    container_name: "backend3"
+    ports:
+      - "5002:5000"
+    depends_on:
+      - "redis"
+      - "elasticsearch"
+      - "backend1"
+    networks:
+      - my-network
+    restart: on-failure
+
+  redis:
+    image: "redis:alpine"
+    container_name: "redis"
+    ports:
+      - "6379:6379"
+    networks:
+      - my-network
+    restart: on-failure
+
+  elasticsearch:
+    image: elasticsearch:8.9.0
+    ports:
+      - "9500:9200"
+    environment:
+      discovery.type: 'single-node'
+      xpack.security.enabled: 'false'
+      ELASTIC_PASSWORD: 'Sohail@2004'
+      ES_JAVA_OPTS: '-Xmx2g -Xms2g'
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    networks:
+      - my-network
+    restart: on-failure
+
+  react:
+    build:
+      context: ./frontend
+      dockerfile: "Dockerfile"
+    container_name: "react"
+    ports:
+      - "80:80"
+    networks:
+      - my-network
+    restart: on-failure
+
+volumes:
+  elasticsearch-data:
+
+networks:
+  my-network:
+    driver: bridge

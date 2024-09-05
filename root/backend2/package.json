@@ -1,0 +1,21 @@
+{
+  "name": "backend2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.15.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "node-fetch": "^3.3.2",
+    "puppeteer": "^23.2.1",
+    "redis": "^4.7.0",
+    "robots-parser": "^3.0.1"
+  }
+}
