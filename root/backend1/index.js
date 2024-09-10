@@ -67,7 +67,7 @@ setTimeout(async () => {
     console.log("Created base");
     console.log(response);
   }
-}, 40000);
+}, 60000);
 
 async function getUrls(userQuery) {
   const response = await elasticClient.search({
