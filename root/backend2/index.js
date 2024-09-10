@@ -70,7 +70,7 @@ setTimeout(async () => {
     console.log("Created base");
     console.log(response);
   }
-}, 40000);
+}, 60000);
 
 app.use(cors());
 const client = redis.createClient({
