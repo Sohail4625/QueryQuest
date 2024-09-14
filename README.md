@@ -5,7 +5,7 @@
 At its core, QueryQuest utilizes Puppeteer to execute its crawling algorithm, navigating through the specified URLs and extracting relevant data. To enhance scalability and optimize resource utilization, Docker is employed to create multiple instances of the crawler, enabling efficient load balancing for crawling tasks. Redis serves as a reliable communication channel between these instances, ensuring seamless information exchange and maintaining data integrity through robust lock mechanisms. The vast amount of indexed URL data is efficiently stored and managed using Elasticsearch, a powerful search engine platform.
 
 To demonstrate its exceptional performance, QueryQuest has achieved an impressive average response time of 5 seconds per query, even when crawling 40 URLs simultaneously with just 3 crawlers. This remarkable efficiency highlights the system's ability to handle demanding workloads and deliver accurate results in a timely manner.
-
+## Demo Video - [Demo Video](https://youtu.be/GbhM2IWamlY)
 ## Features
 - Easily add or remove seed urls from where the web crawling starts.
 - Create multiple instances of the crawler to balance the load and increase the depth of urls crawled and decrease the response time for a query.
