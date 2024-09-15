@@ -1,6 +1,6 @@
 # QueryQuest
 ## Description
-**QueryQuest** is a robust, scalable, and distributed web crawler and search engine designed to efficiently index and search a specific set of URLs. Utilizing the power of modern technologies like Express.js, Puppeteer, Elasticsearch, Redis, Docker, and React.js, QueryQuest delivers exceptional performance and efficiency.
+**QueryQuest** is a robust, scalable, and distributed web crawler and web search engine designed to efficiently index and search a specific set of URLs. Utilizing the power of modern technologies like Express.js, Puppeteer, Elasticsearch, Redis, Docker, and React.js, QueryQuest delivers exceptional performance and efficiency.
 
 At its core, QueryQuest utilizes Puppeteer to execute its crawling algorithm, navigating through the specified URLs and extracting relevant data. To enhance scalability and optimize resource utilization, Docker is employed to create multiple instances of the crawler, enabling efficient load balancing for crawling tasks. Redis serves as a reliable communication channel between these instances, ensuring seamless information exchange and maintaining data integrity through robust lock mechanisms. The vast amount of indexed URL data is efficiently stored and managed using Elasticsearch, a powerful search engine platform.
 
